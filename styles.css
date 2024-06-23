@@ -1,0 +1,122 @@
+.checklist-container {
+    font-family: "Inter", sans-serif;
+
+    background-color: #3579F5;
+    color: white;
+    border-radius: 10px;
+    padding: 12px 18px 15px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 743px;
+    height: 91px;
+}
+
+.checklist-title {
+    background-color: #2364DB;
+    width: 76px;
+    height: 18px;
+    font-size: 12px;
+    border-radius: 40px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checklist-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.doneTasks {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+}
+
+.checklist-info {
+    padding-left: 16px;
+    font-size: 12px;    
+    height: 64px;
+}
+
+.paragraph{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.checklist-actions {
+
+    font-size: 14px;
+    display: flex;
+    margin-top: 26px;
+    height: 100%;
+    justify-content: center;
+    padding: 0;
+}
+
+.btn {
+    border-radius: 6px;
+    font-size: 14px;
+    width: 170px;
+    height: 40px;
+}
+
+
+
+
+.box .percent {
+    position: relative;
+    width: 63px;
+    height: 63px;
+
+}
+.box .percent svg {
+    position: relative;
+    width: 63px;
+    height: 63px;
+}
+.box .percent svg circle {
+    width: 63px;
+    height: 63px;
+    fill: none;
+    stroke-width: 1px;
+    stroke: #fff;
+    transform: translate(5px, 5px) rotate(-90deg); 
+    transform-origin: center; 
+    stroke-dasharray: 440;
+
+}
+.box .percent svg circle:nth-child(1){
+    stroke-dashoffset: 0;
+    stroke-width: 1px;
+    stroke: #fff;
+}
+:root {
+    --percent: 2; /* Ввожу процент выполненных заданий */
+    --offset: calc(440 - (190 * var(--percent) / 100));
+}
+/* 440 - 0%, 250 - 100%*/
+.box .percent svg circle:nth-child(2) {
+    stroke-dashoffset: var(--offset);
+    stroke-linecap: round;
+    stroke-width: 2px;
+    stroke: #fff;
+    transition: stroke-dashoffset 0.5s;
+}
+.box .percent .number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
